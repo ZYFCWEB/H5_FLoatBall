@@ -7,10 +7,10 @@
  * <script src="http://r.3333.cn/a8sdk/PlugIn/FloatBall/js/FloatBall.js" type="text/javascript" ></script>
  * 2.使用以下方法初始化组件
     H5_FloatBall.showBall({
-            url: "http://www.3333.cn/",
-            desc: "",//默认分享理由(可选)
-            title: '燃烧吧二弟web',//分享标题(可选)
-            pics: 'http://r.3333.cn/a8sdk/images/h5_rsbed_share_icon.jpg', //分享图片的路径(可选)
+        url:   "http://www.3333.cn/",
+        desc:  "指游方寸",
+        title: "指游方寸-专注发行,只做精品",
+        pics:  "http://r.3333.cn/3333/gw/pc/images/toplogo.png"
     });
  */
 
