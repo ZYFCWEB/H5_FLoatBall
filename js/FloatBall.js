@@ -35,6 +35,37 @@ H5_FloatBall.init = function(){
 }
 
 /**
+ * 请求函数
+ * @param  String   url          请求地址
+ * @param  String   params       参数
+ * @param  String   callback     函数回调（暂不可用，留空）
+ * @param  String   transferMode 请求方式
+ * @param  String   responseType 返回类型（暂不可用，留空）
+ * @param  Boolean  asyn         同步异步设置
+ */
+H5_FloatBall.call = function(url, params, callback, transferMode, responseType, asyn){
+    var json;
+    var xmlhttp;
+    if (window.XMLHttpRequest){// code for IE7+, Firefox, Chrome, Opera, Safari
+        xmlhttp=new XMLHttpRequest();
+    }else{// code for IE6, IE5
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+
+    xmlhttp.onreadystatechange=function(){
+        if (xmlhttp.readyState==4 && xmlhttp.status==200){
+            json = eval('('+xmlhttp.responseText+')');
+        }
+    }
+
+    xmlhttp.open(transferMode, url, asyn);
+    xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xmlhttp.send(params);
+    return json;
+}
+
+
+/**
  * 调用显示悬浮窗
  */
 H5_FloatBall.showBall = function(){
